@@ -43,11 +43,13 @@ posts = [
     },
 ]
 
+
 def index(request):
     context = {
         'posts_list': posts[::-1],
     }
     return render(request, 'blog/index.html', context)
+
 
 def post_detail(request, id):
     ind_post = posts[id]
@@ -55,6 +57,7 @@ def post_detail(request, id):
         'post': ind_post,
     }
     return render(request, 'blog/detail.html', context)
+
 
 def category_posts(request, category_slug):
     context = {
